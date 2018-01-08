@@ -11,7 +11,7 @@ endif
 
 
 # Find first cross compilation tools
-XTOOLS_DIR = $(abspath $(shell dirname `${WHICH} arm-none-eabi-gcc`)/..)
+XTOOLS_DIR ?= $(abspath $(shell dirname `${WHICH} arm-none-eabi-gcc`)/..)
 
 # Set tool & Lib paths
 X_LIBC_DIR = $(XTOOLS_DIR)/arm-none-eabi/lib/armv7e-m/fpu
@@ -21,7 +21,7 @@ X_AR = $(XTOOLS_DIR)/bin/arm-none-eabi-ar
 X_LD = $(XTOOLS_DIR)/bin/arm-none-eabi-ld
 X_GDB = $(XTOOLS_DIR)/bin/arm-none-eabi-gdb
 
-OUT_DIR = debug
+OUT_DIR = build
 
 OUTPUT = grbl-stm32
 
